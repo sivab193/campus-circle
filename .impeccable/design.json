@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T07:26:02Z",
+  "title": "Design System: Campus Circle",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f3efe4", "tonalRamp": ["#28251e", "#4b463a", "#716a59", "#98917d", "#bbb5a3", "#d7d2c4", "#ebe7dc", "#f8f5ed"] },
+      "ink": { "role": "primary", "displayName": "Map Ink", "canonical": "#17251f", "tonalRamp": ["#101914", "#1b2b24", "#30463c", "#4d6559", "#73887d", "#a1b0a8", "#ced8d2", "#edf3ef"] },
+      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#5d685f", "tonalRamp": ["#18201a", "#303a32", "#4b584e", "#68766c", "#89968d", "#abb5ae", "#d0d7d2", "#eef2ef"] },
+      "coral": { "role": "secondary", "displayName": "Signal Coral", "canonical": "#e65d42", "tonalRamp": ["#3c130d", "#6a2418", "#993925", "#c84c34", "#e66d55", "#ee9b89", "#f6c9be", "#fceae6"] },
+      "field-green": { "role": "secondary", "displayName": "Field Green", "canonical": "#2f6b56", "tonalRamp": ["#0c1d17", "#17382c", "#245540", "#37745a", "#58947a", "#84b59f", "#b7d6c8", "#e3f0ea"] },
+      "trail-gold": { "role": "tertiary", "displayName": "Trail Gold", "canonical": "#dfb43d", "tonalRamp": ["#342807", "#604b0d", "#8f7118", "#bd9729", "#dfb94d", "#e9ce7f", "#f2e2b2", "#faf3df"] },
+      "rule": { "role": "neutral", "displayName": "Printed Rule", "canonical": "#c9c4b6", "tonalRamp": ["#26241f", "#48453d", "#6d685d", "#918c7f", "#b2ada0", "#ccc7bc", "#e2ded5", "#f4f1eb"] },
+      "card": { "role": "neutral", "displayName": "Card Stock", "canonical": "#fffdf7", "tonalRamp": ["#29271f", "#4d493c", "#746f5d", "#9b9580", "#beb8a5", "#dad5c8", "#eeeae2", "#fffdf7"] },
+      "board-hover": { "role": "primary", "displayName": "Board Hover", "canonical": "#24362e", "tonalRamp": ["#101914", "#1d2c25", "#32483e", "#51675b", "#788b80", "#a3b1aa", "#d0d9d4", "#eef3f0"] },
+      "browse-paper": { "role": "neutral", "displayName": "Browse Paper", "canonical": "#e8e3d6", "tonalRamp": ["#27241d", "#4a4539", "#6f6958", "#948d79", "#b6af9d", "#d1ccbd", "#e5e1d7", "#f6f3ec"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Field Guide Display", "purpose": "Hero statements and rare emotional emphasis." },
+      "headline": { "displayName": "Editorial Headline", "purpose": "Major section and safety headings." },
+      "title": { "displayName": "Listing Title", "purpose": "Routes, cards, guidance, and modal titles." },
+      "body": { "displayName": "Utility Body", "purpose": "Descriptions, forms, actions, and consent copy." },
+      "label": { "displayName": "Index Label", "purpose": "Categories, freshness, metadata, and board headings." }
+    },
+    "shadows": [
+      { "name": "paper-lift", "value": "0 12px 30px rgba(23,37,31,.12)", "purpose": "Route board, listing hover, and toast." },
+      { "name": "pinned-note", "value": "0 11px 25px rgba(23,37,31,.1)", "purpose": "Editorial founder note." },
+      { "name": "modal-lift", "value": "0 24px 70px rgba(0,0,0,.35)", "purpose": "Dialogs above the privacy-preserving backdrop." }
+    ],
+    "motion": [
+      { "name": "tactile-lift", "value": "transform .18s ease, box-shadow .18s ease", "purpose": "Brief physical response on primary buttons." },
+      { "name": "card-lift", "value": "transform .2s ease, box-shadow .2s ease", "purpose": "Listing-card hover only; removed for reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "1000px" },
+      { "name": "mobile", "value": "650px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The decisive action for posting, verifying, and continuing.",
+      "html": "<button class=\"ds-btn-primary\">Explore the board <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary{min-height:48px;border:1px solid var(--ink,#17251f);border-radius:12px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--ink,#17251f);color:var(--white,#fffdf7);font:700 16px 'DM Sans',Arial,sans-serif;box-shadow:0 5px 0 #68736b;transition:transform .18s ease,box-shadow .18s ease}.ds-btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 #68736b}.ds-btn-primary:focus-visible{outline:3px solid var(--gold,#dfb43d);outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quieter bordered action that remains part of the paper world.",
+      "html": "<button class=\"ds-btn-secondary\">Verify your email</button>",
+      "css": ".ds-btn-secondary{min-height:48px;border:1px solid var(--ink,#17251f);border-radius:12px;padding:0 20px;background:transparent;color:var(--ink,#17251f);font:700 16px 'DM Sans',Arial,sans-serif;transition:background .18s ease}.ds-btn-secondary:hover{background:var(--white,#fffdf7)}.ds-btn-secondary:focus-visible{outline:3px solid var(--gold,#dfb43d);outline-offset:3px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A contained card-stock search control for listings and locations.",
+      "html": "<label class=\"ds-search\"><span aria-hidden=\"true\">⌕</span><input placeholder=\"Search area, item, or destination\"></label>",
+      "css": ".ds-search{display:flex;align-items:center;gap:9px;background:var(--white,#fffdf7);border:1px solid var(--ink,#17251f);border-radius:12px;padding:0 14px;color:var(--ink,#17251f);font-family:'DM Sans',Arial,sans-serif}.ds-search input{height:48px;border:0;background:transparent;width:100%;outline:0;color:inherit;font:inherit}.ds-search:focus-within{outline:3px solid var(--gold,#dfb43d);outline-offset:3px}"
+    },
+    {
+      "name": "Category Tabs",
+      "kind": "chip",
+      "description": "Strict category wayfinding in a bordered paper tray.",
+      "html": "<div class=\"ds-tabs\"><button class=\"ds-tab ds-active\">All</button><button class=\"ds-tab\">Housing</button><button class=\"ds-tab\">Marketplace</button><button class=\"ds-tab\">Rides</button></div>",
+      "css": ".ds-tabs{display:flex;border:1px solid var(--ink,#17251f);border-radius:12px;padding:4px;background:var(--paper,#f3efe4);overflow:auto}.ds-tab{height:40px;border:0;background:transparent;padding:0 14px;border-radius:8px;color:var(--ink,#17251f);font:700 13px 'DM Sans',Arial,sans-serif;white-space:nowrap}.ds-tab:hover{background:var(--white,#fffdf7)}.ds-tab.ds-active{background:var(--ink,#17251f);color:#fff}.ds-tab:focus-visible{outline:3px solid var(--gold,#dfb43d);outline-offset:2px}"
+    },
+    {
+      "name": "Listing Card",
+      "kind": "card",
+      "refersTo": "listing-card",
+      "description": "A bordered, ranked listing with category, verification, metadata, price, and safe contact action.",
+      "html": "<article class=\"ds-listing\"><div class=\"ds-listing-top\"><span>HOUSING</span><span class=\"ds-verified\">✓ VERIFIED LISTER</span></div><div class=\"ds-visual\"><span class=\"ds-icon\">⌂</span><b>CHAUNCEY HILL</b><i>fresh</i></div><div class=\"ds-listing-body\"><h3>Sunny room near Chauncey</h3><p>Furnished room in a quiet three-bedroom apartment.</p><div class=\"ds-meta\"><span>May–August</span><span>Private room</span></div><div class=\"ds-foot\"><strong>$720 <small>/ mo</small></strong><button>Ask safely →</button></div></div></article>",
+      "css": ".ds-listing{width:min(360px,100%);background:var(--white,#fffdf7);border:1px solid var(--ink,#17251f);border-radius:14px;overflow:hidden;color:var(--ink,#17251f);font-family:'DM Sans',Arial,sans-serif;transition:transform .2s ease,box-shadow .2s ease}.ds-listing:hover{transform:translateY(-4px) rotate(-.2deg);box-shadow:0 12px 30px rgba(23,37,31,.12)}.ds-listing-top{display:flex;justify-content:space-between;padding:12px 15px;border-bottom:1px solid var(--ink,#17251f);font-size:11px;font-weight:700;letter-spacing:.06em}.ds-verified{color:var(--green,#2f6b56)}.ds-visual{height:132px;padding:18px;display:flex;align-items:end;justify-content:space-between;background:#ef927f;position:relative}.ds-icon{width:54px;height:54px;background:var(--white,#fffdf7);border-radius:50%;display:grid;place-items:center;font-size:25px}.ds-visual b{font-size:12px}.ds-visual i{position:absolute;top:12px;left:-5px;background:var(--coral,#e65d42);color:#fff;padding:4px 10px;font:700 11px 'DM Sans',Arial,sans-serif;transform:rotate(-5deg)}.ds-listing-body{padding:19px}.ds-listing h3{font:700 25px/1.05 'Newsreader',Georgia,serif;margin:0}.ds-listing p{color:#58625c;font-size:14px}.ds-meta{display:flex;gap:6px}.ds-meta span{background:var(--paper,#f3efe4);border-radius:20px;padding:5px 9px;font-size:11px;font-weight:600}.ds-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:15px;border-top:1px solid var(--line,#c9c4b6)}.ds-foot strong{font-size:22px}.ds-foot small{font-size:11px}.ds-foot button{border:0;background:none;font-weight:700}.ds-foot button:focus-visible{outline:3px solid var(--gold,#dfb43d);outline-offset:3px}"
+    },
+    {
+      "name": "Route Board",
+      "kind": "custom",
+      "description": "The signature dark directory for the three student-exchange routes and the consent promise.",
+      "html": "<section class=\"ds-board\"><header><span>YOUR CAMPUS FIELD GUIDE</span><span>UPDATED TODAY</span></header><button class=\"ds-route\"><b>01</b><i class=\"ds-route-icon ds-coral\">⌂</i><span><strong>Housing</strong><small>leases &amp; sublets</small></span><em>→</em></button><button class=\"ds-route\"><b>02</b><i class=\"ds-route-icon ds-green\">▣</i><span><strong>Marketplace</strong><small>goods &amp; gear</small></span><em>→</em></button><button class=\"ds-route\"><b>03</b><i class=\"ds-route-icon ds-gold\">◇</i><span><strong>Rides</strong><small>trips &amp; carpools</small></span><em>→</em></button><footer><b>▣</b><span><strong>You decide who gets your contact info.</strong><small>Ask and approve inside the app.</small></span></footer></section>",
+      "css": ".ds-board{width:min(520px,100%);background:var(--ink,#17251f);color:var(--white,#fffdf7);padding:18px;border-radius:16px;box-shadow:0 12px 30px rgba(23,37,31,.12);font-family:'DM Sans',Arial,sans-serif}.ds-board header{display:flex;justify-content:space-between;padding:6px 8px 18px;font-size:11px;letter-spacing:.12em;color:#bac5bc}.ds-route{width:100%;border:0;border-top:1px solid #526158;background:transparent;color:inherit;display:grid;grid-template-columns:40px 48px 1fr 24px;align-items:center;text-align:left;padding:17px 8px;gap:12px}.ds-route:hover{background:#24362e}.ds-route:focus-visible{outline:3px solid var(--gold,#dfb43d);outline-offset:2px}.ds-route>b{font:700 15px 'Newsreader',Georgia,serif}.ds-route-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;font-style:normal}.ds-coral{background:var(--coral,#e65d42)}.ds-green{background:#4b8d73}.ds-gold{background:var(--gold,#dfb43d);color:var(--ink,#17251f)}.ds-route strong,.ds-route small{display:block}.ds-route strong{font:700 24px 'Newsreader',Georgia,serif}.ds-route small{color:#b9c6bd}.ds-route em{font-style:normal}.ds-board footer{display:flex;gap:13px;padding:20px 8px 6px;color:#dce5dd}.ds-board footer strong,.ds-board footer small{display:block}.ds-board footer small{color:#9eaca2;margin-top:3px}"
+    },
+    {
+      "name": "Privacy Strip",
+      "kind": "custom",
+      "description": "A compact consent reminder attached to a decision surface.",
+      "html": "<div class=\"ds-privacy\"><span aria-hidden=\"true\">▣</span><div><strong>You decide who gets your contact info.</strong><small>Ask and approve inside the app. Revoke access anytime.</small></div></div>",
+      "css": ".ds-privacy{display:flex;gap:13px;padding:16px;background:var(--ink,#17251f);color:#dce5dd;border-radius:12px;font-family:'DM Sans',Arial,sans-serif}.ds-privacy>span{font-size:21px}.ds-privacy strong,.ds-privacy small{display:block}.ds-privacy strong{font-size:14px}.ds-privacy small{color:#9eaca2;margin-top:3px;font-size:12px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Pocket Field Guide",
+    "overview": "Campus Circle feels like an uncoated paper guide assembled by students who know the terrain: warm, candid, tactile, and immediately useful. Editorial display type and slightly imperfect paper-note gestures add humanity, while map ink, route numbering, and strict category markers make time-sensitive listings easy to navigate.\n\nTrust is expressed through visible structure. A dark route board organizes the three paths, privacy guidance stays attached to actions, verification is explicit, and safety information is numbered instead of buried in marketing language. The interface should feel crafted, never institutional; it must not imply university endorsement.",
+    "keyCharacteristics": [
+      "Warm uncoated-paper surfaces with dark map-ink structure.",
+      "Editorial Newsreader headlines paired with plainspoken DM Sans utility copy.",
+      "Coral, green, and gold act as stable category and status wayfinding.",
+      "Numbered routes, ranked freshness, index-like tabs, and compact labels accelerate scanning.",
+      "Privacy and consent cues remain visible at decision points.",
+      "Mobile layouts contain every board, card, control, and modal without horizontal spill."
+    ],
+    "rules": [
+      { "name": "The Wayfinding Trinity Rule", "body": "Coral means housing, green means marketplace, and gold means rides or focus; preserve these associations and pair color with text or icons.", "section": "colors" },
+      { "name": "The Ink-First Rule", "body": "Most structure is dark ink on paper. Accent colors identify routes, freshness, and state; they do not wash entire screens.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Use Newsreader for editorial hierarchy and DM Sans for every action, field, filter, and explanatory sentence.", "section": "typography" },
+      { "name": "The Route-Before-Grid Rule", "body": "Establish the three category paths before presenting the larger listing grid; downstream screens should preserve equally obvious category wayfinding.", "section": "layout" },
+      { "name": "The Flat-Until-Handled Rule", "body": "Listing cards rest as bordered paper; lift and a restrained rotation appear only on hover or for deliberately overlaid objects.", "section": "elevation" },
+      { "name": "The Bounded Paper Rule", "body": "Every functional surface needs a clear edge through an ink border, a tonal shift, or a dark filled ground; avoid floating controls with ambiguous hit areas.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do preserve the paper, ink, coral, green, and gold roles across new screens.",
+      "Do keep category labels, icons, and text alongside color wayfinding.",
+      "Do place privacy and consent language beside the action it governs.",
+      "Do use numbered steps, ranks, and concise labels for time-sensitive scanning.",
+      "Do test at 650px and below for contained boards, forms, cards, and long listing text.",
+      "Do keep the student-run, unofficial disclaimer visually present where affiliation could be inferred."
+    ],
+    "donts": [
+      "Don't use Purdue logos, official university styling, or language that implies endorsement.",
+      "Don't replace the warm paper world with glossy gradients, glass panels, or generic blue SaaS surfaces.",
+      "Don't hide contact-consent behavior behind vague trust claims.",
+      "Don't rely on accent color alone to communicate category, verification, freshness, or selection.",
+      "Don't add decorative accents without a wayfinding, trust, or editorial purpose."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "title": "Choose Campus Circle’s visual world",
+  "question": "Which interface should carry the full student portal?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Pocket Field Guide",
+      "kicker": "THE ROLL",
+      "lineage": "student planners, trail guides, and annotated campus maps",
+      "thesis": "Campus life becomes a compact field guide where every listing is a useful, checkable lead.",
+      "palette": ["#F4F0E6", "#17251F", "#E85D3F", "#2F6B56", "#E1B84B"],
+      "materials": ["uncoated paper", "map ink", "index tabs"],
+      "viewport": "A dense but calm Today board leads with three category routes, fresh listings, and a privacy status strip that reads like an annotated guide page.",
+      "risk": "The paper language must stay precise or it can drift into scrapbook decoration.",
+      "raised": [
+        {"from": "Terminal Wayfinding", "raise": "Every category and state now has strict, repeatable wayfinding color rules."},
+        {"from": "Split-Flap Concourse", "raise": "Time-sensitive listings earn a live, ranked rhythm instead of a generic card grid."}
+      ],
+      "wireframe": {"cols": 12, "rows": 10, "regions": [
+        {"label": "compact nav", "x": 0, "y": 0, "w": 12, "h": 1, "accent": false},
+        {"label": "category routes", "x": 0, "y": 1, "w": 4, "h": 5, "accent": true},
+        {"label": "fresh leads", "x": 4, "y": 1, "w": 8, "h": 5, "accent": false},
+        {"label": "privacy status", "x": 0, "y": 6, "w": 12, "h": 1, "accent": true},
+        {"label": "recent activity", "x": 0, "y": 7, "w": 12, "h": 3, "accent": false}
+      ]}
+    },
+    {
+      "id": "model-pick",
+      "label": "The Community Noticeboard",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "well-kept library corkboards and student union notices",
+      "thesis": "A familiar shared board makes posting, scanning, and responding feel immediately communal.",
+      "palette": ["#FAF7EF", "#20211D", "#C94D32", "#3F6D5A", "#D6B46A"],
+      "materials": ["warm paper", "cork", "rubber-stamp ink"],
+      "viewport": "Pinned notices form a strong editorial composition around a central post action and three clearly separated boards.",
+      "risk": "It is the most familiar direction and could resemble other community marketplaces.",
+      "wireframe": {"cols": 12, "rows": 10, "regions": [
+        {"label": "masthead", "x": 0, "y": 0, "w": 12, "h": 2, "accent": false},
+        {"label": "housing board", "x": 0, "y": 2, "w": 5, "h": 5, "accent": true},
+        {"label": "market board", "x": 5, "y": 2, "w": 4, "h": 5, "accent": false},
+        {"label": "ride board", "x": 9, "y": 2, "w": 3, "h": 5, "accent": false},
+        {"label": "safety note", "x": 0, "y": 7, "w": 12, "h": 3, "accent": true}
+      ]}
+    },
+    {
+      "id": "challenger-terminal",
+      "label": "Terminal Wayfinding",
+      "verdict": "competitive",
+      "lineage": "international airport information systems",
+      "thesis": "Housing, goods, and rides become three unmistakable destinations in a rigorously signed system.",
+      "palette": ["#F5C400", "#111111", "#FFFFFF", "#D9473F"],
+      "materials": ["enamel sign panels", "directional pictograms"],
+      "viewport": "Monumental category bands route students directly into live results with distance, time, and status visible at a glance.",
+      "case": "It wins on task clarity and remains highly legible on phones, but feels less specifically student-made.",
+      "risk": "The airport association can make the marketplace feel too institutional.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding.webp"
+    },
+    {
+      "id": "challenger-splitflap",
+      "label": "The Live Concourse",
+      "verdict": "declined",
+      "lineage": "rail concourse split-flap boards",
+      "thesis": "All activity is ranked as a changing departures board.",
+      "palette": ["#151614", "#F4F2E8", "#E5A928", "#C24B44"],
+      "materials": ["matte flaps", "brushed metal"],
+      "viewport": "Rows of expiring listings update in place across fixed columns.",
+      "case": "Excellent for rides and expiry, but housing and marketplace browsing need richer imagery and softer pacing.",
+      "kept": "Time-sensitive information now has a disciplined ranked rhythm.",
+      "risk": "A single table grammar becomes exhausting across every workflow.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A polished contemporary marketplace dashboard with familiar filters and cards.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB", "#F3F4F6"],
+    "materials": ["clean grid", "listing photography"],
+    "viewport": "A conventional navigation bar, search hero, category tabs, and responsive listing grid.",
+    "risk": "Clear and usable, but visually indistinguishable from many marketplace products.",
+    "wireframe": {"cols": 12, "rows": 10, "regions": [
+      {"label": "navbar", "x": 0, "y": 0, "w": 12, "h": 1, "accent": false},
+      {"label": "search", "x": 0, "y": 1, "w": 12, "h": 2, "accent": true},
+      {"label": "filters", "x": 0, "y": 3, "w": 3, "h": 7, "accent": false},
+      {"label": "listing grid", "x": 3, "y": 3, "w": 9, "h": 7, "accent": false}
+    ]}
+  },
+  "steer": true
+}
