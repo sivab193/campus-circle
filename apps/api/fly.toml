@@ -1,0 +1,43 @@
+# Fly.io config for the Campus Circle Rust/Axum API.
+# Deploy from this directory:  cd apps/api && fly deploy
+#
+# Set secrets once (do NOT put these in this file):
+#   fly secrets set \
+#     MONGODB_URI="mongodb+srv://USER:PASS@cluster0.xxxx.mongodb.net/?retryWrites=true&w=majority" \
+#     JWT_SECRET="$(openssl rand -hex 32)" \
+#     ADMIN_TOKEN="$(openssl rand -hex 16)" \
+#     SMTP_HOST="smtp.zeptomail.com" SMTP_PORT="587" \
+#     SMTP_USERNAME="emailapikey" SMTP_PASSWORD="your-smtp-token" \
+#     SMTP_FROM="no-reply@cc.siv19.dev"
+#
+# Then add the custom domain + cert:  fly certs add api.cc.siv19.dev
+
+app = "campus-circle-api"
+primary_region = "ord"   # Chicago — close to MongoDB Atlas in us-central
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  API_ADDR = "0.0.0.0:8080"
+  MONGODB_DATABASE = "campus_circle"
+  CORS_ORIGIN = "https://cc.siv19.dev"
+  APP_URL = "https://cc.siv19.dev"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    method = "get"
+    path = "/health"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

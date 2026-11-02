@@ -15,6 +15,17 @@ services:
       MONGODB_DATABASE: campus_circle
       API_ADDR: 0.0.0.0:8080
       CORS_ORIGIN: http://localhost:3000
+      APP_URL: http://localhost:3000
+      JWT_SECRET: development-secret-change-me
+      # Set ADMIN_TOKEN to enable POST /dev/seed (send it as X-Admin-Token).
+      ADMIN_TOKEN: dev-seed-token
+      # Leave SMTP_* unset locally to run in development OTP mode (the code is
+      # returned in the request-otp response instead of being emailed).
+      # SMTP_HOST: smtp.zeptomail.com
+      # SMTP_PORT: "587"
+      # SMTP_USERNAME: emailapikey
+      # SMTP_PASSWORD: your-smtp-token
+      # SMTP_FROM: no-reply@cc.siv19.dev
     ports: ["8081:8080"]
     depends_on:
       mongo:
