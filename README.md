@@ -1,5 +1,7 @@
 # Campus Circle
 
+**Live:** <https://cc.siv19.dev>
+
 Campus Circle is a student-run, privacy-first exchange for verified Purdue students: housing, marketplace listings, and rides in one responsive app. It was started after the founder personally experienced a scam and wanted student interactions to begin with stronger verification and safer defaults.
 
 > Unofficial project. Campus Circle is not affiliated with, endorsed by, or operated by Purdue University.
